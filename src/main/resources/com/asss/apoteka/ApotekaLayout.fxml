@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.lang.*?>
+<BorderPane fx:controller="com.asss.apoteka.ApotekaController"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+
+
+        <BorderPane>
+            <padding>
+                <Insets bottom="10" top="10" right="25" left="25"></Insets>
+            </padding>
+
+            <left>
+                <Label style="-fx-font: NORMAL 20 Tahoma;" text="Apoteka">
+
+                </Label>
+            </left>
+
+
+            <center>
+
+                <HBox alignment="CENTER_RIGHT">
+                    <padding>
+                        <Insets right="100"></Insets>
+                    </padding>
+                    <Text fx:id="danasnjiPrometText">Danasnji promet :</Text>
+                </HBox>
+            </center>
+
+            <right>
+                <HBox alignment="TOP_RIGHT">
+
+                    <TextField promptText="Kolicina" minWidth="100" fx:id="kolicinaProdajePrompt">
+                        <prefWidth>100</prefWidth>
+                    </TextField>
+                    <Button fx:id="prodajButton" minWidth="100">Prodaj lek</Button>
+                </HBox>
+
+            </right>
+        </BorderPane>
+
+
+    </top>
+
+
+    <center>
+
+        <TableView fx:id="tableView">
+
+            <columns>
+                <TableColumn text="Naziv" minWidth="50" fx:id="naziv">
+                </TableColumn>
+                <TableColumn text="Tip" minWidth="50" fx:id="tip">
+                </TableColumn>
+                <TableColumn text="Cena"  minWidth="50" fx:id="cena">
+                </TableColumn>
+                <TableColumn text="Aktivne komponente" fx:id="aktivneKomponente" minWidth="200">
+                </TableColumn>
+                <TableColumn text="Kolicina" minWidth="100" fx:id="kolicina">
+                </TableColumn>
+
+
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+
+
+        <HBox maxWidth="Infinity">
+
+
+            <padding>
+                <Insets top="10" right="25" bottom="10" left="25"></Insets>
+            </padding>
+            <spacing>10</spacing>
+            <TextField maxWidth="Infinity" promptText="Naziv" fx:id="nazivPrompt" HBox.hgrow="ALWAYS"></TextField>
+            <TextField maxWidth="Infinity" promptText="Cena" fx:id="cenaPrompt" HBox.hgrow="ALWAYS"></TextField>
+            <TextField maxWidth="Infinity" promptText="Kolicina" fx:id="kolicinaPrompt" HBox.hgrow="ALWAYS"></TextField>
+            <TextField maxWidth="Infinity" promptText="Aktivne Komponente" minWidth="200" fx:id="komponentePrompt"
+                       HBox.hgrow="ALWAYS"></TextField>
+
+            <ChoiceBox maxWidth="Infinity" value="Tip Leka" minWidth="100" fx:id="izborTipaLeka" HBox.hgrow="ALWAYS">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Analgetik"/>
+                        <String fx:value="Anestetik"/>
+                        <String fx:value="Antibiotik"/>
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <ChoiceBox maxWidth="Infinity" value="Poreklo leka" minWidth="150" fx:id="izborPoreklaLeka"
+                       HBox.hgrow="ALWAYS">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Hemijski lek"/>
+                        <String fx:value="Prirodni lek"/>
+
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+            <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="dodajButton" minWidth="100">Dodaj lek</Button>
+            <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="ukloniButton" minWidth="100">Ukloni lek</Button>
+
+        </HBox>
+
+
+    </bottom>
+
+</BorderPane>
